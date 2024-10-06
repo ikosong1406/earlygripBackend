@@ -21,6 +21,9 @@ const userData = require("./Routes/userdata");
 const getStudentResult = require("./Routes/getStudentResult");
 const resultUpload = require("./Routes/resultUpload");
 const result = require("./Routes/result");
+const allTimetable = require("./Routes/allTimetable");
+const newTimetable = require("./Routes/newTimetable");
+const newLesson = require("./Routes/newLesson");
 
 const PORT = process.env.PORT || 5001;
 
@@ -52,6 +55,9 @@ app.use("/userData", userData);
 app.use("/getStudentResult", getStudentResult);
 app.use("/resultUpload", resultUpload);
 app.use("/result", result);
+app.use("/allTimetable", allTimetable);
+app.use("/newTimetable", newTimetable);
+app.use("/newLesson", newLesson);
 
 app.listen(PORT, () => {
   console.log("Server Started");

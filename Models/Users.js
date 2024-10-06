@@ -3,13 +3,13 @@ const Schema = mongoose.Schema;
 
 // Lesson Note Schema
 const LessonNoteSchema = new Schema({
-  subject: { type: String, required: true },
-  topic: { type: String, required: true },
-  date: { type: Date, required: true },
-  class: { type: String, required: true },
-  attachment: { type: String, required: true },
-  text: { type: String, required: true },
-  status: { type: String, required: true },
+  subject: { type: String },
+  topic: { type: String },
+  date: { type: Date },
+  className: { type: String },
+  attachment: { type: String },
+  text: { type: String },
+  status: { type: String },
 });
 
 // Staff Schema
@@ -32,6 +32,11 @@ const UsersSchema = new Schema(
     password: { type: String },
     form: { type: String },
     hod: { type: String },
+    timetable: {
+      type: Map,
+      of: [String],
+      default: {},
+    },
   },
   { timestamps: true }
 );
